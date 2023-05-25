@@ -66,7 +66,12 @@ def format_custom_keyboard_for_config_file(custom_keyboard):
             key_bindings = key_config[1]
             config_string += f"    key {key_name} {{    {key_bindings}   }};\n"
         config_string_cleaned = config_string.replace("'", "")
+
+        config_string_cleaned += """\n    key <AE01> {  [     1,    exclam, U26A0      ]   };\n"""
+        config_string_cleaned += """\n    key <TLDE> {  [     grave,    asciitilde, U2248  ]   };\n"""
+        config_string_cleaned += """\n    key <AE11> {  [     minus,    underscore, U2014  ]   };\n"""
         config_string_cleaned += """\n    include "level3(ralt_switch)"\n"""
+
         config_string_cleaned += """\n    // END CUSTOM CONFIGURATION\n"""
     return config_string_cleaned
 
